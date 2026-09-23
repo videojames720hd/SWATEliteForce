@@ -65,7 +65,7 @@ Caption=Drugs are not secure.
 Caption=Drugs are secured Boss.
 
 [R2_RepliedCantDeployLightStick]
-Caption=Boss can't drop a lighstick.
+Caption=Boss can't drop a lightstick.
 
 [R2_RepliedDeployingLightStick]
 Caption=Roger dropping a light stick.
@@ -197,7 +197,7 @@ Caption=No can do on the Stingray.
 Caption=Roger lighting it up.
 
 [B1_RepliedCantDeployLightStick]
-Caption=No can do on the lightsick.
+Caption=No can do on the lightstick.
 
 [B1_RepliedDrugsSecure]
 Caption=Drugs are secure no problem.
@@ -899,7 +899,7 @@ Caption=Augghh..
 Caption=Uff
 
 [Todor_ReactedDownOfficer]
-Caption=(In Bulgarian repeated in English) Dont fuck with me!
+Caption=(In Bulgarian repeated in English) Don't fuck with me!
 
 [Todor_ReactedDownSuspect]
 Caption=(In Bulgarian) Fool! Get up and fight!
@@ -1514,7 +1514,7 @@ Caption=Hey!
 Caption=Stay quiet..
 
 [ld_ReassuredPassiveHostage]
-Caption=Youre safe now.
+Caption=You're safe now.
 
 [ld_RepliedTOC]
 Caption=Copy.
@@ -1910,7 +1910,7 @@ Caption=This one won't give up.
 Caption=This one won't give up.
 
 [b1_ReportedTaserUnavailable]
-Caption=None availble!
+Caption=None available!
 
 [b1_ReportedThresholdClear]
 Caption=No visible threats.
@@ -2462,7 +2462,7 @@ Caption=Reynolds to TOC...
 Caption=Fields is down!
 
 [r1_ReportedB2Down]
-Caption=Jacskon's down!
+Caption=Jackson's down!
 
 [r1_ReportedBeanBagUnavailable]
 Caption=No shotgun, Sir.
@@ -2828,7 +2828,7 @@ Caption="TOC, this is Girard, "
 Caption=Fields is down!
 
 [r2_ReportedB2Down]
-Caption=Jacskon's down!
+Caption=Jackson's down!
 
 [r2_ReportedBeanBagUnavailable]
 Caption=No beanbag ammo!
@@ -4106,7 +4106,7 @@ Caption=You're gonna get me out of here?
 Caption=What took you so long?
 
 [mh2_AnnouncedSpottedOfficerScared]
-Caption=Youv'e got to get me out of here!
+Caption=You've got to get me out of here!
 
 [mh2_AnnouncedSpottedOfficerSurprised]
 Caption=You're a police officer?
@@ -4313,7 +4313,7 @@ Caption=This is Sierra One. Lost the contact in the alley side 3 level 1.
 Caption=You will suffer an eternity of torment in hell.
 
 [MS1_AnnouncedRestrained_expm04]
-Caption=Hey! Youre repressing my second amendment rights! Ow! Not so tight!
+Caption=Hey! You're repressing my second amendment rights! Ow! Not so tight!
 
 [MS1_CantSee_expm04]
 Caption=There's so much crap in the air I can't see.
@@ -4829,7 +4829,7 @@ Caption="Submachine guns and rifles have multiple firing modes, ranging from sin
 Caption=When you're done, move down to the long range station.
 
 [Train6_1]
-Caption="At long range accuracy becomes imperative.  Your abiity to control your weapon with skill and discipline will save your life, and the lives of the people around you.  If you set the M4 on full auto, you will quickly lose control of it due to recoil.  Give a try now: set your M4 to full auto, and try to fire several short, controlled bursts.  "
+Caption="At long range accuracy becomes imperative.  Your ability to control your weapon with skill and discipline will save your life, and the lives of the people around you.  If you set the M4 on full auto, you will quickly lose control of it due to recoil.  Give a try now: set your M4 to full auto, and try to fire several short, controlled bursts.  "
 
 [Train6_2]
 Caption=When you are finished on the range, move through the door on the right.
@@ -5021,7 +5021,7 @@ Caption="No, no, the other door.   "
 Caption=No, you're goin' back where you came from now.  Try goin' left at the intersection.
 
 [Train40_1]
-Caption=Ok.  You can keep tabs on your officers when you are seperated from them by observing their movements through their helmet cameras.  Check out what Blue is seeing right now.  When you are ready, move into the next room and then we'll start getting fancy.
+Caption=Ok.  You can keep tabs on your officers when you are separated from them by observing their movements through their helmet cameras.  Check out what Blue is seeing right now.  When you are ready, move into the next room and then we'll start getting fancy.
 
 [Train41_1]
 Caption=Since you can essentially see through their eyes, it's not hard to command them from a distance.  Tell the blue team to open and clear through the door they are covering.
@@ -5567,7 +5567,7 @@ Caption=Oh, shit, and I thought I'd seen everything...
 Caption=TOC, we've found a graveyard in the basement.  Looks like it's their children.
 
 [ConvTen6_2]
-Caption="Copy that, entry team.  Notifiying the morgue.  "
+Caption="Copy that, entry team.  Notifying the morgue.  "
 
 [ConvTen7_1]
 Caption=This place is giving me the creeps.
@@ -5654,7 +5654,7 @@ Caption=Tell the bomb squad they missed all the fun...
 Caption=In ongoing news, the stalemate continues at the Old Granite Hotel.  To recap this afternoon's events, gunmen claiming to represent a group called America Now invaded the Old Granite, and kidnapped the heir to real estate baron James Bettencourt's empire.
 
 [ConvHotel5_2]
-Caption=The Old Granite is a local landmark, having been owned by the same family for nearly a hundred years until impending backruptcy forced the Jiarmin clan to sell the hotel to the Bettencourt trust...
+Caption=The Old Granite is a local landmark, having been owned by the same family for nearly a hundred years until impending bankruptcy forced the Jiarmin clan to sell the hotel to the Bettencourt trust...
 
 [ConvHotel6_1_b1]
 Caption=One down; this one is cut.
@@ -5954,7 +5954,7 @@ Caption=(Whistles in awe)
 Caption=Holy Mother of Pearl, look at all this hardware!
 
 [ConvWarehouse3_3]
-Caption=Quiet down. (Over radio) Entry team to TOC. Weve discovered a stockpile of weapons in the basement. Rifles, grenades, explosives, ammunition the works.
+Caption=Quiet down. (Over radio) Entry team to TOC. We've discovered a stockpile of weapons in the basement. Rifles, grenades, explosives, ammunition the works.
 
 [ConvWarehouse3_4]
 Caption=Roger entry team. We'll notify the ATF and have EOD on standby
@@ -6041,7 +6041,7 @@ Caption=Sierra Two reporting. Suspect spotted. Side 4, Level 2.
 Caption=Suspect spotted in the back alley. Side 2, Level 2.
 
 [s2_SpottedContact_m06]
-Caption=Sierra Two to enty team. Suspect spotted in conference room. Side 4, Level 2.
+Caption=Sierra Two to entry team. Suspect spotted in conference room. Side 4, Level 2.
 
 [s2_SpottedContact_m08]
 Caption=Sierra Two reporting. I have suspect spotted. Side 1, Level 2.
@@ -6101,19 +6101,19 @@ Caption=Highground reporting. Side 2, level 1. Unknown in the parking lot.
 Caption=Highground to entry team. Suspect spotted in building foyer.
 
 [hg_SpottedContact_m09]
-Caption=Hightground to entry team Unknown spotted. Side 3, level 2.
+Caption=Highground to entry team Unknown spotted. Side 3, level 2.
 
 [hg_LostContact_m01]
 Caption=Highground reporting. Lost visual with suspect. He went back into the house.
 
 [hg_LostContact_m02]
-Caption=Hightground to entry team. Lost visual with suspect. Side 3, level 2.
+Caption=Highground to entry team. Lost visual with suspect. Side 3, level 2.
 
 [hg_LostContact_m03]
 Caption=Highground reporting. Lost visual contact. Side 2, level 2.
 
 [hg_LostContact_m04]
-Caption=Hightground to entry team. Unknown has reentered building from the parking lot. Side 2, level 1.
+Caption=Highground to entry team. Unknown has reentered building from the parking lot. Side 2, level 1.
 
 [hg_LostContact_m08]
 Caption=Highground reporting. Lost visual with suspect Side 1, level 1.
@@ -6884,7 +6884,7 @@ Caption=The darkness has claimed you.
 Caption=Um, have you been here before; is it always like this?
 
 [ms1_ShotAtBreachedDoor_m09]
-Caption=Don't let them stop the the Plan!
+Caption=Don't let them stop the Plan!
 
 [ms1_ShotAtBreachedDoor_m13]
 Caption=Hold the line... fire!
@@ -7190,7 +7190,7 @@ Caption=My Brethren are everywhere...
 Caption=Last dance!
 
 [ms2_ShotAtBreachedDoor_m09]
-Caption=Don't let them stop the the Plan!
+Caption=Don't let them stop the Plan!
 
 [fh1_PointedToEnemy_m07]
 Caption=They went that way...
@@ -7808,7 +7808,7 @@ Caption=What took so long!
 Caption=Who do you think you are, barging in here!
 
 [fh1_AnnouncedNonCompliant_m08]
-Caption=This can't be happnening..
+Caption=This can't be happening..
 
 [mh2_ReactedOfficerDown_m11]
 Caption=Uh oh...
@@ -7928,7 +7928,7 @@ Caption=Help!  They're shootin' everywhere!
 Caption=They're over here!  With guns.....
 
 [fh1_DoorBlocked_m04]
-Caption=Damint, I think it's blocked...
+Caption=Dammit, I think it's blocked...
 
 [mh2_PointedToEnemy_m09]
 Caption=Seek your fate...
@@ -8243,7 +8243,7 @@ Caption=This is the darkness Taronne spoke of.
 Caption=Just glad they didn't care so much 'bout me
 
 [fh3_AnnouncedCompliant_m13]
-Caption=Why arent you stopping those lunatics?  They're crazy!
+Caption=Why aren't you stopping those lunatics?  They're crazy!
 
 [mh2_AnnouncedCompliant_m11]
 Caption=Jeez, don't shoot, I don't move so fast these days!
@@ -8993,7 +8993,7 @@ Caption=Hey! Get the doors!
 Caption=Keep waiitin...
 
 [ln_ThreatenedHostage]
-Caption=Dont get any closer!
+Caption=Don't get any closer!
 
 [ak_ShotAFriend]
 Caption=Goddamn it!
@@ -9251,7 +9251,7 @@ Caption=Watch this!
 Caption=The door!
 
 [hk_AnnouncedRestrained]
-Caption=Look, I'm just a buisiness man, running a business here...
+Caption=Look, I'm just a business man, running a business here...
 
 [hk_AnnouncedSpottedOfficer]
 Caption=You should'a stayed out!

@@ -7,11 +7,11 @@ Description=Jacketed hollow point ammunition is characterized by its hollow tip 
 FriendlyName=JHP
 
 [ArmorPiercing]
-Description=Armor piercing ammuntion consists of a hard bullet made from steel or tungsten alloys in a pointed shape typically covered by a thin layer of lead and/or a copper/brass jacket. The lead and jacket are intended to prevent barrel wear from the hard core materials. AP rounds are slightly worse on unarmored targets than FMJ. This is due to the hard AP projectiles' tendency to not deform or reliably tumble/yaw.
+Description=Armor piercing ammunition consists of a hard bullet made from steel or tungsten alloys in a pointed shape typically covered by a thin layer of lead and/or a copper/brass jacket. The lead and jacket are intended to prevent barrel wear from the hard core materials. AP rounds are slightly worse on unarmored targets than FMJ. This is due to the hard AP projectiles' tendency to not deform or reliably tumble/yaw.
 FriendlyName=AP
 
 [JacketedSoftPoint]
-Description=Jacketed Soft Point ammuntion is a variation of the FMJ design where the jacket did not cover the nose of the bullet. The soft lead nose was found to still expand in flesh while the remaining jacket still prevented lead fouling in the barrel. JSP is roughly splitting the difference between FMJ and JHP. It gives more penetration than JHP but has more stopping power against unarmored targets than the FMJ.
+Description=Jacketed Soft Point ammunition is a variation of the FMJ design where the jacket did not cover the nose of the bullet. The soft lead nose was found to still expand in flesh while the remaining jacket still prevented lead fouling in the barrel. JSP is roughly splitting the difference between FMJ and JHP. It gives more penetration than JHP but has more stopping power against unarmored targets than the FMJ.
 FriendlyName=JSP
 
 [BreachingShotgunAmmo]
@@ -34,7 +34,7 @@ FriendlyName=0 Buck
 GUIImage=Texture'gui_tex.ammo_0buckshotgun'
 
 [1ShotgunAmmo]
-Description=1 buck, while not commonly used by police officers, is nontheless a capable choice for interior spaces. These rounds contain 16 buckshot pellets, all 1 gauge in diameter. These rounds fare slightly better than the 4 buck against armored targets and are less ricochet-prone, but the much larger 1 gauge pellet may overpenetrate.
+Description=1 buck, while not commonly used by police officers, is nonetheless a capable choice for interior spaces. These rounds contain 16 buckshot pellets, all 1 gauge in diameter. These rounds fare slightly better than the 4 buck against armored targets and are less ricochet-prone, but the much larger 1 gauge pellet may overpenetrate.
 FriendlyName=1 Buck
 GUIImage=Texture'gui_tex.ammo_1buckshotgun'
 
@@ -70,7 +70,7 @@ FriendlyName=OC-Ball
 GUIImage=Texture'gui_tex.ammo_paintball'
 
 [LessLethalAmmo]
-Description=Less than lethal shotgun rounds are regular 00 gauge shells that are stuffed with small beagbags.  When the beanbags are fired they expand to cause an impact with a large surface area.  This blunt force impact causes extreme pain and knocks the wind out of the target, temporarily incapacitating them.
+Description=Less than lethal shotgun rounds are regular 00 gauge shells that are stuffed with small beanbags.  When the beanbags are fired they expand to cause an impact with a large surface area.  This blunt force impact causes extreme pain and knocks the wind out of the target, temporarily incapacitating them.
 FriendlyName=Beanbags
 GUIImage=Texture'gui_tex.ammo_lesslethal'
 

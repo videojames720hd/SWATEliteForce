@@ -334,7 +334,7 @@ TotalAmmoString=10 magazines
 RateOfFire=1200 RPM
 
 [Glock19HG]
-Description=A more compact iteration of the Glock, the Glock 19 shaves 12mm (0.5 in) off of its barrel size, and pares down the 17 standard rounds for a 15 round magazine. While this firearm, deemed ''compact'' by the manufacturer, is smaller than the Glock 17, it has worse recoil and accuracy than its forebearer.
+Description=A more compact iteration of the Glock, the Glock 19 shaves 12mm (0.5 in) off of its barrel size, and pares down the 17 standard rounds for a 15 round magazine. While this firearm, deemed ''compact'' by the manufacturer, is smaller than the Glock 17, it has worse recoil and accuracy than its forebear.
 FriendlyName=Glock 19
 ShortName=Glock 19
 ProductionStart=1988
@@ -367,7 +367,7 @@ TotalAmmoString=10 magazines
 RateOfFire=300 RPM
 
 [TEC9HG]
-Description=This infamous machine pistol was developed by Intratec, a Miami offshoot of the Swedish company Interdynamic. While it has relatively poor stopping power compared to full-sized submachine guns, its highly concealable form factor and ease of converting to full-auto makes it the weapon of choice for drive-bys and gang shootings. The TEC-DC9 received considerable noteriety in American media after the Columbine and Cleveland school shootings. After these events, the weapon was banned in several states by name and Intratec went bankrupt. Despite being a criminal weapon, a flashlight has been added for better tactical use in dark areas.
+Description=This infamous machine pistol was developed by Intratec, a Miami offshoot of the Swedish company Interdynamic. While it has relatively poor stopping power compared to full-sized submachine guns, its highly concealable form factor and ease of converting to full-auto makes it the weapon of choice for drive-bys and gang shootings. The TEC-DC9 received considerable notoriety in American media after the Columbine and Cleveland school shootings. After these events, the weapon was banned in several states by name and Intratec went bankrupt. Despite being a criminal weapon, a flashlight has been added for better tactical use in dark areas.
 FriendlyName=TEC-DC9
 ShortName=TEC-DC9
 Manufacturer=Intratec
@@ -814,7 +814,7 @@ FriendlyName=Pepper Spray
 ShortName=Pepper Spray
 
 [stingGrenade]
-Description=The sting grenade, or Stinger, is filled with many small rubber balls.  Upon detonation these balls are ejected from the grenade, bombarding targets with blunt force projectiles.  The rubber balls will not penetrate the skin but can cause dizzyness, disorientation, and severe pain from the impact of the projectiles. ||While considered less lethal, the sting grenade can cause severe injury if it detonates in very close proximity to someone.
+Description=The sting grenade, or Stinger, is filled with many small rubber balls.  Upon detonation these balls are ejected from the grenade, bombarding targets with blunt force projectiles.  The rubber balls will not penetrate the skin but can cause dizziness, disorientation, and severe pain from the impact of the projectiles. ||While considered less lethal, the sting grenade can cause severe injury if it detonates in very close proximity to someone.
 FriendlyName=Model 9590 Stinger
 ShortName=Stinger
 GivenName=Stinger
@@ -826,7 +826,7 @@ ShortName=CS Gas
 GivenName=CS Gas
 
 [FlashbangGrenade]
-Description=The stun grenade is a diversionary device that stuns and disorients people with an explosive report and a brillant flash.  People that are affected by the device can be temporarily blinded and deafened by the blast.  During this time SWAT has a significant tactical advantage over the affected persons.||Flashbangs are designed so that they will not fragment on detonation, but can still cause serious injury if detonation occurs in close proximity to a person.  Caution is advised.
+Description=The stun grenade is a diversionary device that stuns and disorients people with an explosive report and a brilliant flash.  People that are affected by the device can be temporarily blinded and deafened by the blast.  During this time SWAT has a significant tactical advantage over the affected persons.||Flashbangs are designed so that they will not fragment on detonation, but can still cause serious injury if detonation occurs in close proximity to a person.  Caution is advised.
 FriendlyName=M84 Flashbang
 ShortName=Flashbang
 GivenName=Flashbang
