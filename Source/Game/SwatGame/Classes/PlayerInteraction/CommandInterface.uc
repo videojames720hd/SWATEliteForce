@@ -1889,7 +1889,7 @@ simulated function CleanSweepCommand(Pawn CommandGiver,
     local int i;
 
     // Find everything that we need to restrain/collect/disable
-    foreach AllActors(class 'Actor', A)
+    foreach DynamicActors(class 'Actor', A)
     {
         if(Restrain)
         {
