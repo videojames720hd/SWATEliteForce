@@ -1416,7 +1416,7 @@ simulated function OnLightstickKeyFrame()
 simulated function AdjustOfficerMovementSpeed() {
   local float OriginalFwd, OriginalBck, OriginalSde;
   local float ModdedFwd, ModdedBck, ModdedSde;
-  local float TotalWeight;
+  local float WeightMovMod;
 
   local AnimationSetManager AnimationSetManager;
   local AnimationSet setObject;
@@ -1432,15 +1432,15 @@ simulated function AdjustOfficerMovementSpeed() {
   ModdedBck = OriginalBck;
   ModdedSde = OriginalSde;
 
-  ModdedFwd *= LoadOut.GetWeightMovementModifier();
-  ModdedBck *= LoadOut.GetWeightMovementModifier();
-  ModdedSde *= LoadOut.GetWeightMovementModifier();
+  WeightMovMod = LoadOut.GetWeightMovementModifier();
+
+  ModdedFwd *= WeightMovMod;
+  ModdedBck *= WeightMovMod;
+  ModdedSde *= WeightMovMod;
 
   AnimSet.AnimSpeedForward = ModdedFwd;
   AnimSet.AnimSpeedBackward = ModdedBck;
   AnimSet.AnimSpeedSidestep = ModdedSde;
-
-  TotalWeight = LoadOut.GetTotalWeight();
 }
 
 simulated function Tick(float dTime) {
