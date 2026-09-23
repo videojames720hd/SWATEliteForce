@@ -1063,17 +1063,15 @@ function bool ShouldDropWeaponInstantly()
 
 	switch(Skill)
 	{
-		//note: new ComplyInstantDropChance vars cause errors, so re-using
-		//FullyBodyHitChance vars as a temporary hack
 		case EnemySkill_High:
-			//Chance = HighSkillComplyInstantDropChance;
-			Chance = class'SwatEnemyConfig'.default.HighSkillFullBodyHitChance;
+			Chance = class'SwatEnemyConfig'.default.HighSkillComplyInstantDropChance;
+			break;
 		case EnemySkill_Medium:
-			//Chance = MediumSkillComplyInstantDropChance;
-			Chance = class'SwatEnemyConfig'.default.MediumSkillFullBodyHitChance;
+			Chance = class'SwatEnemyConfig'.default.MediumSkillComplyInstantDropChance;
+			break;
 		case EnemySkill_Low:
-			//Chance = LowSkillComplyInstantDropChance;
-			Chance = class'SwatEnemyConfig'.default.LowSkillFullBodyHitChance;
+			Chance = class'SwatEnemyConfig'.default.LowSkillComplyInstantDropChance;
+			break;
 	}
 	return (FRand() < Chance);
 }

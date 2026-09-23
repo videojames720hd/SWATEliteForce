@@ -23,6 +23,10 @@ var config float						LowSkillFullBodyHitChance;
 var config float						MediumSkillFullBodyHitChance;
 var config float						HighSkillFullBodyHitChance;
 
+var config float						LowSkillComplyInstantDropChance;
+var config float						MediumSkillComplyInstantDropChance;
+var config float						HighSkillComplyInstantDropChance;
+
 var config float            LowSkillMinTimeBeforeShooting;
 var config float            LowSkillMaxTimeBeforeShooting;
 var config float            MediumSkillMinTimeBeforeShooting;
@@ -38,4 +42,7 @@ defaultproperties
     MediumSkillMaxTimeBeforeShooting = 1.3
     HighSkillMinTimeBeforeShooting = 0.6
     HighSkillMaxTimeBeforeShooting = 1.0
+    LowSkillComplyInstantDropChance = 0.9
+    MediumSkillComplyInstantDropChance = 0.8
+    HighSkillComplyInstantDropChance = 0.7
 }
