@@ -73,23 +73,18 @@ simulated function InitializeAmmo(int StartingAmmoAmount) {
 simulated function float GetCurrentAmmoWeight() {
 	local int i;
 	local float weight;
-	local float amountThisClipAdded;
+	local float WeightPerRound;
+
+	WeightPerRound = (WeightPerReloadLoaded - WeightPerReloadUnloaded) / ClipSize;
 
 	for(i=0; i < StartingClipCount; i++)
 	{
-		if(ClipRoundsRemaining[i] >= ClipSize)
+		weight += WeightPerReloadUnloaded;	// Add the weight of an empty magazine
+		if(ClipRoundsRemaining[i] > 0)
 		{
-			weight += WeightPerReloadLoaded;	// Add the weight of a full magazine
-		}
-		else
-		{
-			weight += WeightPerReloadUnloaded;	// Add the weight of an empty magazine
-			if(ClipRoundsRemaining[i] > 0)
-			{
-				// Add the weight of the bullets in the magazine
-				amountThisClipAdded = ((WeightPerReloadLoaded - WeightPerReloadUnloaded) / ClipSize) * ClipRoundsRemaining[i];
-				weight += amountThisClipAdded;
-			}
+			// Add the weight of the bullets in the magazine. Not clamped to ClipSize, since a
+			// magazine can hold ClipSize + 1 after a reload with a round kept in the chamber.
+			weight += WeightPerRound * ClipRoundsRemaining[i];
 		}
 	}
 
