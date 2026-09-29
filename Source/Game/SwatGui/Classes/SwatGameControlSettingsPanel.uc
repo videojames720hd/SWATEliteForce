@@ -20,6 +20,7 @@ var(SWATGui) private EditInline Config GUICheckBoxButton MyHideFPModelCheckbox;
 var(SWATGui) private EditInline Config GUICheckBoxButton MyHideCrosshairsCheckbox;
 var(SWATGui) private EditInline Config GUICheckBoxButton MyDisableInertiaCheckbox;
 var(SWATGui) private EditInline Config GUICheckBoxButton MyUseImperialMeasurementsCheckbox;
+var(SWATGui) private EditInline Config GUICheckBoxButton MyReloadWhenFullCheckbox;
 var(SWATGui) private EditInline Config GUICheckBoxButton MyMouseSmoothingBox;
 var(SWATGui) private EditInline Config GUICheckBoxButton MyAlwaysRunCheck;
 var(SWATGui) private EditInline Config GUIComboBox MyNetSpeedBox;
@@ -232,6 +233,15 @@ function SaveSettings()
         GC.ExtraIntOptions[5] = 0;
     }
 
+    if(MyReloadWhenFullCheckbox.bChecked)
+    {
+        GC.ExtraIntOptions[6] = 1;
+    }
+    else
+    {
+        GC.ExtraIntOptions[6] = 0;
+    }
+
 	GC.bShowCustomSkins = MyCustomSkinsCheck.bChecked;
 	//log("Saving, GC.bShowCustomSkins now"@GC.bShowCustomSkins);
 
@@ -285,6 +295,7 @@ function LoadSettings()
     MyDisableInertiaCheckbox.SetChecked(GC.ExtraIntOptions[3] == 1);
 	MyDisableZoomBox.SetChecked(GC.ExtraIntOptions[4] == 1);
     MyUseImperialMeasurementsCheckbox.SetChecked(GC.ExtraIntOptions[5] == 1);
+    MyReloadWhenFullCheckbox.SetChecked(GC.ExtraIntOptions.Length > 6 && GC.ExtraIntOptions[6] == 1);
 
     MouseXMultiplier = float(PlayerOwner().ConsoleCommand("Get WinDrv.WindowsClient MouseXMultiplier"));
     MouseYMultiplier = float(PlayerOwner().ConsoleCommand("Get WinDrv.WindowsClient MouseYMultiplier"));

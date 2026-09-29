@@ -142,7 +142,8 @@ replication
 {
 	// replicated functions sent to server by owning client
 	reliable if( Role < ROLE_Authority )
-        ServerRequestQualify, ServerRequestUse, ServerSetIsUsingOptiwand, ServerSetForceCrouchWhileOptiwanding, ServerThrowLightstick;
+        ServerRequestQualify, ServerRequestUse, ServerSetIsUsingOptiwand, ServerSetForceCrouchWhileOptiwanding, ServerThrowLightstick,
+        ServerRequestReloadWhenFull;
 
     // replicated functions sent to client by server
     reliable if( Role == ROLE_Authority )
@@ -1041,6 +1042,19 @@ function ServerRequestMelee( EquipmentSlot Slot )
 // Overrides Pawn::ServerRequestReload().
 function ServerRequestReload( EquipmentSlot Slot )
 {
+	HandleServerReloadRequest(Slot, false);
+}
+
+// Executes only on the server.
+// Sent instead of ServerRequestReload() when the player has "Allow Reload When Full" enabled.
+function ServerRequestReloadWhenFull( EquipmentSlot Slot )
+{
+	HandleServerReloadRequest(Slot, true);
+}
+
+// Executes only on the server.
+private function HandleServerReloadRequest( EquipmentSlot Slot, bool bAllowWhenFull )
+{
     local FiredWeapon ActiveItem, ItemToReload;
     local Controller i;
     local Controller theLocalPlayerController;
@@ -1062,7 +1076,7 @@ function ServerRequestReload( EquipmentSlot Slot )
     if  ( ActiveItem.IsA('RoundBasedWeapon') && ActiveItem.Ammo.IsFull() )
         return;
 
-    if ( ValidateReload() )
+    if ( ValidateReload(bAllowWhenFull) )
     {
         // Do an RPC to all clients to initiate the reload on each one.
 
@@ -1085,7 +1099,7 @@ function ServerRequestReload( EquipmentSlot Slot )
 						if (Level.GetEngine().EnableDevTools)
 							mplog( self$" on server: calling ClientReloadForPawn() on "$current.Pawn );
 
-                        current.ClientReloadForPawn( self, ItemToReload.GetSlot() );
+                        current.ClientReloadForPawn( self, ItemToReload.GetSlot(), bAllowWhenFull );
                     }
                 }
             }
@@ -1658,10 +1672,13 @@ simulated function bool ValidateMelee()
 	return ActiveItem.IsIdle(); //can only do one thing at a time
 }
 
-simulated function bool ValidateReload()
+// bAllowWhenFull: the player has "Allow Reload When Full" enabled, so a full
+// (or the fullest) magazine may be swapped out for another one.
+simulated function bool ValidateReload(optional bool bAllowWhenFull)
 {
     local HandheldEquipment ActiveItem;
     local FiredWeapon Weapon;
+    local ICanReloadWhenFull ReloadWhenFullAmmo;
 
 	if (Level.GetEngine().EnableDevTools)
 		mplog( self$"---SwatPlayer::ValidateReload()." );
@@ -1685,6 +1702,12 @@ simulated function bool ValidateReload()
     {
         //can only do one thing at a time
         return false;
+    }
+
+    ReloadWhenFullAmmo = ICanReloadWhenFull(Weapon.Ammo);
+    if (bAllowWhenFull && ReloadWhenFullAmmo != None)
+    {
+        return ReloadWhenFullAmmo.CanReloadWhenFull();
     }
 
     if (!Weapon.Ammo.CanReload() )

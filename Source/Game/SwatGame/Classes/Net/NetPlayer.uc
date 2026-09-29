@@ -6,6 +6,7 @@
 class NetPlayer extends SwatPlayer
     implements IAmUsedByToolkit
     dependsOn(OfficerLoadOut)
+    dependsOn(SwatGUIConfig)
     config(SwatPawn)
     native;
 

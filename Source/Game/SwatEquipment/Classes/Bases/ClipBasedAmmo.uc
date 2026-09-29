@@ -1,4 +1,5 @@
-class ClipBasedAmmo extends Engine.SwatAmmo;
+class ClipBasedAmmo extends Engine.SwatAmmo
+	implements SwatGame.ICanReloadWhenFull;
 
 var(Ammo) config int ClipSize "The number of bullets in a clip";
 var(Ammo) config int DefaultEnemyClipCount "The number of clips of this ammunition that a suspect will carry (by default)";
@@ -121,6 +122,34 @@ simulated function bool CanReload()
 	return (DesiredClip > -1 && DesiredClip != CurrentClip);
 }
 
+// ICanReloadWhenFull implementation
+// Allows reloading as long as any other clip has rounds, even if the current clip is full
+simulated function bool CanReloadWhenFull()
+{
+	return (FullestOtherClip() > -1);
+}
+
+//returns -1 if no clip other than the current one has any rounds remaining
+simulated function int FullestOtherClip()
+{
+	local int i;
+	local int Max;
+	local int Clip;
+
+	Clip = -1;
+
+	for (i = 0; (i < MAX_CLIPS) && (ClipRoundsRemaining[i] != INVALID_CLIP); ++i)
+	{
+		if (i != CurrentClip && ClipRoundsRemaining[i] > Max)
+		{
+			Max = ClipRoundsRemaining[i];
+			Clip = i;
+		}
+	}
+
+	return Clip;
+}
+
 //returns -1 if no clip has any rounds remaining
 simulated function int FullestClip()
 {
@@ -188,7 +217,14 @@ simulated function OnReloaded()
     assertWithDescription(!IsEmpty(),
         "[tcohen] ClipBasedAmmo::OnReloaded() tried to reload, but it is empty.");
 
-    NewClip = FullestClip();
+    // Never reload back into the current clip. When the current clip isn't the fullest,
+    // this is the same clip FullestClip() would pick; it only differs when the player
+    // reloads a full (or the fullest) clip with "Allow Reload When Full" enabled.
+    NewClip = FullestOtherClip();
+    if (NewClip == -1)
+    {
+        NewClip = FullestClip();
+    }
     assert(NewClip > -1);   //since we're not empty, there should be a Z+ FullestClip
 
 	//if the weapon is not empty , leave a round in the chamber in the new clip and remove one in the current clip

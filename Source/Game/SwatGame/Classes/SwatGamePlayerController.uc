@@ -2672,6 +2672,7 @@ function ServerGiveItem(SwatPawn Other)
 simulated function InternalReload()
 {
     local FiredWeapon Weapon;
+    local bool bAllowWhenFull;
 
     if (Level.GetEngine().EnableDevTools)
         log( "...in SwatGamePlayerController::InternalReload()" );
@@ -2688,31 +2689,52 @@ simulated function InternalReload()
 
     Weapon = FiredWeapon(Pawn.GetActiveItem());
 
-    if (Weapon.Ammo.IsFull()) return;   //can't reload a weapon when it is full
+    if (Weapon == None) return;   //can only reload a FiredWeapon
 
-    if  (
-            Weapon == None
-        ||  (   //can't reload round-based weapons that are full
-                Weapon.IsA('RoundBasedWeapon')
-            &&  Weapon.Ammo.IsFull()
-            )
-        )
-        return;
+    // Round-based weapons (shotguns) can never be reloaded when full, since there's no room for another shell
+    bAllowWhenFull = GetReloadWhenFullEnabled() && !Weapon.IsA('RoundBasedWeapon');
 
-    if ( SwatPlayer.ValidateReload() )
+    if (Weapon.Ammo.IsFull() && !bAllowWhenFull) return;   //can't reload a weapon when it is full
+
+    if ( SwatPlayer.ValidateReload(bAllowWhenFull) )
     {
-        if (Level.GetEngine().EnableDevTools)
-            mplog( "...calling ServerRequestReload()." );
+        if (bAllowWhenFull)
+        {
+            if (Level.GetEngine().EnableDevTools)
+                mplog( "...calling ServerRequestReloadWhenFull()." );
 
-        SwatPlayer.ServerRequestReload( SwatPlayer.GetActiveItem().GetSlot() );
+            SwatPlayer.ServerRequestReloadWhenFull( SwatPlayer.GetActiveItem().GetSlot() );
+        }
+        else
+        {
+            if (Level.GetEngine().EnableDevTools)
+                mplog( "...calling ServerRequestReload()." );
+
+            SwatPlayer.ServerRequestReload( SwatPlayer.GetActiveItem().GetSlot() );
+        }
     }
 }
 
 //called from SwatPlayer::OnReloadingFinished()
 simulated function ConsiderAutoReloading()
 {
-    if (bReload > 0)
-        Reload();
+    local HandheldEquipment ActiveItem;
+
+    if (bReload == 0)
+    {
+        return;
+    }
+
+    // Holding the reload key keeps loading shells into round-based weapons. With
+    // "Allow Reload When Full" enabled, a magazine weapon would otherwise keep
+    // cycling magazines for as long as the key is held.
+    ActiveItem = Pawn.GetActiveItem();
+    if (GetReloadWhenFullEnabled() && (ActiveItem == None || !ActiveItem.IsA('RoundBasedWeapon')))
+    {
+        return;
+    }
+
+    Reload();
 }
 
 simulated exec function EquipSlot(int Slot)
@@ -5632,7 +5654,8 @@ simulated function ClientMeleeForPawn( SwatPlayer theSwatPlayer, EquipmentSlot I
 }
 
 // Executes on the client only
-simulated function ClientReloadForPawn( SwatPlayer theSwatPlayer, EquipmentSlot ItemSlot )
+// bAllowWhenFull: the server accepted a reload from a player with "Allow Reload When Full" enabled
+simulated function ClientReloadForPawn( SwatPlayer theSwatPlayer, EquipmentSlot ItemSlot, optional bool bAllowWhenFull )
 {
     local FiredWeapon Item;
     local OfficerLoadOut theLoadOut;
@@ -5654,7 +5677,7 @@ simulated function ClientReloadForPawn( SwatPlayer theSwatPlayer, EquipmentSlot 
     if ( Level.NetMode != NM_Standalone && !Item.PrevalidateReload() )
         return;
 
-    if ( theSwatPlayer.ValidateReload() )
+    if ( theSwatPlayer.ValidateReload(bAllowWhenFull) )
     {
         if (Level.GetEngine().EnableDevTools)
             mplog( "...Calling Reload() on: "$Item );

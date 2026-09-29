@@ -285,6 +285,16 @@ function bool GetInertiaDisabled()
 	return GC.ExtraIntOptions[3] == 1;
 }
 
+simulated function bool GetReloadWhenFullEnabled()
+{
+	local SwatGuiConfig GC;
+
+	GC = SwatRepo(Level.GetRepo()).GuiConfig;
+
+	// Older SwatGuiState.ini files won't have this entry yet
+	return GC.ExtraIntOptions.Length > 6 && GC.ExtraIntOptions[6] == 1;
+}
+
 //overridden from Engine.PlayerController
 exec function SetName( coerce string S)
 {
